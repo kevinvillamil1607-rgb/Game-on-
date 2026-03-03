@@ -1,0 +1,383 @@
+/* --------------------------------
+ * ESTILOS GLOBALES Y RESETS
+ * --------------------------------
+ */
+* {
+    box-sizing: border-box;
+}
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.7em; }
+h3 { font-size: 2em; } 
+p {
+    font-size: 1.25em;
+    color: #c7d5e0; 
+}
+
+body {
+    margin: 0;
+    font-family: "work sans" , sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* --------------------------------
+ * BOTONES Y ACCIÓN
+ * --------------------------------
+ */
+button, .button {
+    font-size: 1.2em; 
+    font-weight: bold;
+    background-color: rgb(19, 111, 248);
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0); 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, transform 0.1s ease;
+    border: none;
+    cursor: pointer;
+}
+.button {
+    display: inline-block; 
+    text-decoration: none; 
+}
+button:hover, .button:hover {
+    background-color: rgb(82, 164, 231);
+    color: black;
+}
+button:active, .button:active {
+    transform: translateY(1px); 
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4); 
+}
+button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --------------------------------
+ * ENCABEZADO Y NAVEGACIÓN
+ * --------------------------------
+ */
+header {
+    background-color: rgb(14, 123, 173); 
+    padding: 15px 0;
+}
+header .logo::before {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient( 120deg , transparent , white ( 255 , 255 , 255 , 0.8 ), transparent );
+transition: all 0,5s ease;
+}
+header .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-direction: row;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+header .logo {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+.logo-area img {
+    height: 50px;
+    width: auto;
+}
+header nav { 
+    display: flex;
+    gap: 20px; 
+    text-align: right;
+}
+header nav a { 
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+}
+header nav a:hover {
+    color: rgb(0, 238, 255);
+}
+
+/* --------------------------------
+ * SECCIONES PRINCIPALES (INDEX)
+ * --------------------------------
+ */
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    background-image: url(imagenes/hero-background.PNG); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+section {
+    padding: 50px 0;
+    min-height: 50vh;
+}
+#CLICK-AND-POINT {
+    background-image: url(imagenes/CAP-background.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#HACK-AND-SLASH {
+    background-image: url(imagenes/HAS-background.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#INDIE {
+    background-image: url(imagenes/indie-background.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#CLICK-AND-POINT .container, #HACK-AND-SLASH .container, #INDIE .container {
+    text-align: center;
+}
+
+/* --------------------------------
+ * ESTILOS DE LAS TARJETAS
+ * --------------------------------
+ */
+.jogos {
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr);  /* mismo arreglo para movil*/
+    gap: 30px; 
+    margin-top: 40px;
+}
+.game-card {
+    background-color: rgb(6, 51, 110); 
+    color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+.game-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.game-card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover;
+}
+.card-content {
+    padding: 15px;
+}
+.card-content h3 {
+    font-size: 1.5em; 
+    margin: 10px 0;
+    color: rgb(16, 252, 212); 
+}
+.card-content p {
+    font-size: 1em;
+    color: #ccc; 
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* --------------------------------
+ * ESTILOS DE PÁGINA DE DETALLE (STEAM-STYLE)
+ * --------------------------------
+ */
+#game-detail.steam-style {
+    padding: 60px 0;
+    background-color: #1b2838; 
+    color: #c7d5e0; 
+}
+
+.game-title {
+    color: white; 
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+
+.hero-and-purchase {
+    display: flex;
+    gap: 20px;
+    flex-direction: column; 
+    margin-bottom: 40px;
+}
+
+.game-hero {
+    flex-grow: 1;
+}
+
+
+#game-detail .hero-image {
+    display: block; 
+    width: 100%;
+    height: auto; 
+    min-height: 200px; 
+    max-width: 100%; 
+    object-fit: contain; /* Asegura que la imagen se vea COMPLETA */
+    border-radius: 5px;
+}
+
+.purchase-box {
+    background-color: rgba(0, 0, 0, 0.3); 
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    order: -1; 
+}
+
+.summary-text {
+    font-size: 1.1em;
+    color: #c7d5e0;
+    margin-bottom: 20px;
+}
+
+.price-container {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.purchase-box h3 {
+    font-size: 1.5em;
+    color: white;
+    margin-top: 0;
+}
+
+.price-info {
+    font-size: 2em;
+    font-weight: bold;
+    color: #a3e0f0; 
+    text-align: center;
+    margin: 15px 0;
+}
+
+.button.full-width {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.small-text {
+    font-size: 0.9em;
+    color: #66c0f4;
+    text-align: center;
+}
+
+.game-summary {
+    color: #c7d5e0;
+}
+.game-summary h2 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+.game-summary p {
+    font-size: 1.1em;
+}
+
+.specs-title {
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #66c0f4; 
+}
+
+/* Estilos de las especificaciones PROFESIONALES */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px 40px;
+}
+
+.spec-item {
+    font-size: 1em;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.spec-label {
+    color: #66c0f4; 
+    font-weight: 300;
+}
+
+.spec-value {
+    color: white; 
+    font-weight: bold;
+}
+
+/* --------------------------------
+ * MEDIA QUERIES (PARA ESCRITORIO)
+ * --------------------------------
+ */
+
+@media (min-width: 768px) {
+
+    .jogos {
+        grid-template-columns: repeat(3, 1fr); /* el tru arreglo pc*/
+    }
+    
+    header nav {
+        flex-direction: row;
+    }
+
+    /* DETALLE DE JUEGO EN ESCRITORIO */
+    .hero-and-purchase {
+        flex-direction: row; 
+        align-items: flex-start;
+    }
+    .purchase-box {
+        order: 0; 
+        flex-shrink: 0; 
+    }
+    .game-hero {
+        /* CRÍTICO: Imagen 70% izquierda, caja 30% derecha */
+        flex-basis: 70%; 
+        max-width: 70%;
+    }
+}
+
+/* --------------------------------
+ * FOOTER
+ * --------------------------------
+ */
+footer {
+    background-color: rgb(14, 123, 173);
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+.margen {
+    margin-top: 32px;
+}
